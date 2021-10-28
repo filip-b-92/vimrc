@@ -5,28 +5,32 @@ set relativenumber
 
 syntax on
  "colorscheme peaksea
+ colorscheme pablo
  colorscheme monokai
 set t_Co=256
 set showcmd
 
- 	set ts=2
- 	set sw=2
+"
+ 	set  tabstop=2
+"
+ 	set  shiftwidth=2
 
- 	set sts=2
- 	set fcl=all
-  set noto
+ 	set softtabstop=2
+  "set foldclose=all
+  set notimeout
 se modeline
 	command Vimrc :tabnew ~/.vimrc
 	command CssMin :%s/\([{;/]\)\s*\n\s*/\1/
 	command CssPreaty :%s/\([{;/]\)\s*/\1\r  /g
 	command CssPreaty2 :%s/.*}/}/
+	command Nogitter :se nonu norelativenumber wrap
 
 map <F5> :Vimrc 
 
-	map \p i(<Delete><Esc>ea)<Esc>
-	map \c i{<Delete><Esc>ea}<Esc>
-	map \q i'<Delete><Esc>ea'<Esc>
-	map \d i"<Delete><Esc>ea"<Esc>
+	map \p i(<Esc>ea)<Esc>
+	map \c i{<Esc>ea}<Esc>
+	map \q i'<Esc>ea'<Esc>
+	map \d i"<Esc>ea"<Esc>
 
 highlight Folded ctermfg=darkblue
 
@@ -39,4 +43,6 @@ set wildmode=longest:full
 "syntax enable 
 se nowrap
 se cursorline
+se clipboard=unnamedplus
 
+se mouse=a
